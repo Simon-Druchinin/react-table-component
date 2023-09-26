@@ -259,7 +259,9 @@ function TableCol<T>({
 							{column.name}
 						</ColumnText>
 					) : (
-						column.name
+						<ColumnText ref={columnRef} data-column-id={column.id}>
+							{column.name}
+						</ColumnText>
 					)}
 
 					{!disableSort && customSortIconLeft && renderCustomSortIcon()}
