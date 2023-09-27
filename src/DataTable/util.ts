@@ -29,7 +29,7 @@ export function sort<T>(
 		return sortFn(rows.slice(0), selector as Selector<T>, direction);
 	}
 
-	return rows.slice(0).sort((a: T, b: T) => {
+	return rows.slice(0).sort((a: any, b: any) => {
 		let aValue;
 		let bValue;
 
@@ -82,11 +82,11 @@ export function parseSelector<T extends Record<string, any>>(row: T, selector: s
 	}, row);
 }
 
-export function getProperty<T>(
-	row: T,
+export function getProperty(
+	row: any,
 	// TODO: remove string type in V8
-	selector: Selector<T> | string | undefined | null | unknown, // unknown allows us to throw an error for JS code
-	format: Format<T> | undefined | null,
+	selector: Selector<any> | string | undefined | null | unknown, // unknown allows us to throw an error for JS code
+	format: Format<any> | undefined | null,
 	rowIndex: number,
 ): React.ReactNode {
 	if (!selector) {
