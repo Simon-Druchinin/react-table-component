@@ -56,6 +56,7 @@ function useColumns<T>(
 			if (id && sourceColumnId.current && id !== sourceColumnId.current) {
 				const selectedColIndex = findColumnIndexById(tableColumns, sourceColumnId.current);
 				const targetColIndex = findColumnIndexById(tableColumns, id);
+				if (tableColumns[targetColIndex].freeze) return
 				const reorderedCols = [...tableColumns];
 
 				reorderedCols[selectedColIndex] = tableColumns[targetColIndex];

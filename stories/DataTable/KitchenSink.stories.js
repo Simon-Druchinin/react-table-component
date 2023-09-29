@@ -32,7 +32,7 @@ const columns = [
 		sortable: true,
 		reorder: true,
 		resize: true,
-		freeze: 'lg',
+		freeze: 'sm',
 	},
 	{
 		name: 'Year',
@@ -40,6 +40,7 @@ const columns = [
 		sortable: true,
 		reorder: true,
 		resize: true,
+		freeze: 'sm',
 	},
 	{
 		name: 'Title',
